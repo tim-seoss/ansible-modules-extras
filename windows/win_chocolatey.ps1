@@ -284,6 +284,11 @@ Function Choco-Uninstall
         $cmd += " -force"
     }
 
+    if ($packageparams)
+    {
+        $cmd += " -params '$packageparams'"
+    }
+
     $results = invoke-expression $cmd
 
     if ($LastExitCode -ne 0)
